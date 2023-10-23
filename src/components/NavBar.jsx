@@ -1,10 +1,12 @@
+import {Link} from "react-router-dom"
+
 export default function NavBar() {
     return (
         <nav>
             <ul>
-                <li>Articles</li>
-                <li>Topics</li>
-                <li>Users</li>
+            <Link to="/articles"> Articles </Link>
+            <li>Topics</li>
+            <Link to="/users">Users</Link>
             </ul>
         </nav>
     )
