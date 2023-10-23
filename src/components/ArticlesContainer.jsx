@@ -14,7 +14,7 @@ export default function ArticlesContainer() {
                 setIsLoading(false)
             }
             catch (error) {
-                console.error
+                console.error(error)
             }
         }
         fetchArticles()
@@ -39,7 +39,7 @@ export default function ArticlesContainer() {
 						ArticlesVotes={article["votes"]}
                         ArticlesImg={article["article_img_url"]}
 						ArticlesCommentCount={article["comment_count"]}
-						
+                        article_id={article["article_id"]}
 					/>
 				);
 			})}
