@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
+import CommentsContainer from "./CommentsContainer";
 
 export default function ArticleContainer({params}) {
     const [article, setArticle] = useState(null)
@@ -28,6 +29,7 @@ export default function ArticleContainer({params}) {
     }
 
     return (
+        <div>
         <ArticleCard
         ArticleAuthor={article["author"]}
         ArticleName={article["title"]}
@@ -38,5 +40,8 @@ export default function ArticleContainer({params}) {
         ArticleCommentCount={article["comment_count"]}
         ArticleBody={article["body"]}
         />
+        <CommentsContainer
+        />
+        </div>
     )
 }
