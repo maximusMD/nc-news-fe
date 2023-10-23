@@ -14,7 +14,6 @@ export default function ArticlesCard({ArticlesName, ArticlesAuthor, ArticlesTopi
             <img src={ArticlesImg}/> 
             <li>{ArticlesCommentCount}</li>
         </ul>
-        
     </div>
     )
 }
