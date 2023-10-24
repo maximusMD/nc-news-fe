@@ -7,18 +7,24 @@ export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, A
 
     const handleVote = async (voteType) => {
         if (isLoading) {
-            return <p>I had to make a change to this as I forgot to branch from main for this ticket so I will change it back to loading afterwards, this is the relevant file for this ticket!</p>
+            return <p>Loading...</p>
         }
+
+        const updatedVotes = voteType === "up" ? votes + 1 : voteType === "down" ? votes - 1 : votes
+
+        setVotes(updatedVotes)
+
         setIsLoading(true)
 
         try {
-            const res = await axios.patch(`https://nc-news-31tf.onrender.com/api/articles/${article_id}`, {
-            inc_votes: voteType === "up" ? 1 : -1
+            await axios.patch(`https://nc-news-31tf.onrender.com/api/articles/${article_id}`, {
+                inc_votes: voteType === "up" ? 1 : voteType === "down" ? -1 : 0
         })
-        setVotes(res.data.article.votes)
+        // setVotes(res.data.article.votes)
         } 
         catch (error) {
             console.error(error)
+            setVotes(votes)
             
         }
         finally {
