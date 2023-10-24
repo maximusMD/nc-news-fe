@@ -20,7 +20,7 @@ export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, A
             await axios.patch(`https://nc-news-31tf.onrender.com/api/articles/${article_id}`, {
                 inc_votes: voteType === "up" ? 1 : voteType === "down" ? -1 : 0
         })
-        // setVotes(res.data.article.votes)
+
         } 
         catch (error) {
             console.error(error)
