@@ -25,12 +25,13 @@ export default function ArticleContainer({params}) {
     }, [article_id])
 
     if (isLoading) {
-        return <p>Loading...</p>;
+        return <p>Loading...</p>
     }
 
     return (
         <div>
         <ArticleCard
+        article_id={article_id}
         ArticleAuthor={article["author"]}
         ArticleName={article["title"]}
         ArticleTopic={article["topic"]}
@@ -40,8 +41,7 @@ export default function ArticleContainer({params}) {
         ArticleCommentCount={article["comment_count"]}
         ArticleBody={article["body"]}
         />
-        <CommentsContainer
-        />
+        {article.comment_count === 0 ? (<p>Be the first one to comment...</p>) : (<CommentsContainer/>)}
         </div>
     )
 }

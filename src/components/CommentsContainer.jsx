@@ -13,8 +13,6 @@ export default function CommentsContainer({params}) {
         const fetchComments = async (params) => {
             try {
                 const res = await axios.get(`https://nc-news-31tf.onrender.com/api/articles/${article_id}/comments`)
-                console.log(res.data);
-
                 setComments(res.data.comments)
                 setIsLoading(false)
             } 

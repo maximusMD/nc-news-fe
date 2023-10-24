@@ -22,3 +22,12 @@ function App() {
 }
 
 export default App
+
+      {/* <Route path="/topics" element={
+        <div>
+          <h1>Topics</h1>
+          <ul>
+            <li><Link to="/topic1">Topic 1</Link></li>
+            <li><Link to="/topic2">Topic 2</Link></li>
+          </ul>
+        </div>}/> */}

@@ -5,7 +5,7 @@ export default function NavBar() {
         <nav>
             <ul>
             <Link to="/articles"> Articles </Link>
-            <li>Topics</li>
+            <Link to="/topics">Topics</Link>
             <Link to="/users">Users</Link>
             </ul>
         </nav>
