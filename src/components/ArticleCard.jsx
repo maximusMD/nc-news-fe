@@ -7,7 +7,7 @@ export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, A
 
     const handleVote = async (voteType) => {
         if (isLoading) {
-            return <p>Loading...</p>
+            return <p>I had to make a change to this as I forgot to branch from main for this ticket so I will change it back to loading afterwards, this is the relevant file for this ticket!</p>
         }
         setIsLoading(true)
 
@@ -34,7 +34,7 @@ export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, A
             <li>{ArticleCreatedAt}</li>
             <li>
                 <button onClick={() => handleVote("up")} disabled={isLoading}>+1</button>
-                {votes}
+                {votes}   
                 <button onClick={() => handleVote("down")} disabled={isLoading}>-1</button>
             </li>
             <img src={ArticleImg}/> 
