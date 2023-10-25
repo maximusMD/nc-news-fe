@@ -9,7 +9,6 @@ export default function PostCommentContainer({ article_id }) {
     const [comment, setComment] = useState(null)
 
     const handleCommentSubmit = async (comment) => {
-        console.log(comment);
         setPosting(true)
         try {
             const res = await axios.post(
@@ -26,7 +25,6 @@ export default function PostCommentContainer({ article_id }) {
         } 
         catch (error) {
         setPostError("Error - Please try again.")
-        console.log(error);
         console.error("Error posting comment:", error)
         } 
         finally {
@@ -39,7 +37,6 @@ export default function PostCommentContainer({ article_id }) {
         {postSuccess ? <p>Comment posted successfully!</p> : null}
         {postError ? <p>Error posting comment: {postError}</p> : null}
         <PostCommentForm onCommentSubmit={handleCommentSubmit} setComment={setComment} />
-        {comment && console.log(comment)}
         </div>
     )
 }

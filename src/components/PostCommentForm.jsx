@@ -6,8 +6,6 @@ export default function PostCommentForm({ onCommentSubmit, setComment }) {
     const fixedVotes = 0
 
     const handleSubmit = (e) => {
-        console.log(username)
-        console.log(body)
         e.preventDefault()
 
         if (username && body) {
@@ -18,10 +16,8 @@ export default function PostCommentForm({ onCommentSubmit, setComment }) {
             username: username,
             body: body,
         };
-        // console.log("New Comment:", newComment);
         setComment(newComment)
         onCommentSubmit(newComment)
-        // console.log("After Submit:", newComment)
         setUsername("")
         setBody("")
         }
