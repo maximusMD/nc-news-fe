@@ -8,13 +8,15 @@ export default function ArticlesContainer() {
     const [isLoading, setIsLoading] = useState(true)
     const [searchParams, setSearchParams] = useSearchParams()
     const topicName = searchParams.get("topic")
+    const sort = searchParams.get("sort") || "created_at"
+    const order = searchParams.get("order") || "desc"
 
     useEffect(() => {
         const fetchArticles = async () => {
-            let queryStr = `https://nc-news-31tf.onrender.com/api/articles?topic=${topicName}`
+            let queryStr = `https://nc-news-31tf.onrender.com/api/articles?topic=${topicName}&sort_by=${sort}&order=${order}`
 
             if (!topicName){
-                queryStr = 'https://nc-news-31tf.onrender.com/api/articles'
+                queryStr = `https://nc-news-31tf.onrender.com/api/articles?sort_by=${sort}&order=${order}`
             }
             
             try {
@@ -27,15 +29,43 @@ export default function ArticlesContainer() {
             }
         }
         fetchArticles()
-    }, [])
+    }, [topicName, sort, order])
+
+    const handleSorting = (newSort) => {
+        setSearchParams({ sort: newSort })
+    };
+    
+    const handleOrder = () => {
+        const newOrder = order === "asc" ? "desc" : "asc"
+        setSearchParams({ sort, order: newOrder })
+    }
 
     if (isLoading) {
-        return <p> Loading...</p>;
+        return <p> Loading...</p>
     }
 
     return (
         <div>
         <h1>List of Articles</h1>
+        <div>
+        <label>Sort by:</label>
+        <select
+            onChange={(e) => handleSorting(e.target.value)}
+            value={sort}
+        >
+            <option value="created_at">Date</option>
+            <option value="comment_count">Comment Count</option>
+            <option value="votes">Votes</option>
+        </select>
+        <label>Order:</label>
+        <select
+            onChange={(e) => handleOrder(e.target.value)}
+            value={order}
+        >
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+        </div>
         <ul id="Articles List">
 			{articles.map((article) => {
 				return (

@@ -10,9 +10,9 @@ export default function ArticlesCard({ArticlesName, ArticlesAuthor, ArticlesTopi
             <li>{ArticlesAuthor}</li>
             <li>{ArticlesTopic}</li>
             <li>{ArticlesCreatedAt}</li>
-            <li>{ArticlesVotes}</li>
+            <li>Votes{ArticlesVotes}</li>
             <img src={ArticlesImg}/> 
-            <li>{ArticlesCommentCount}</li>
+            <li>CommentCount{ArticlesCommentCount}</li>
         </ul>
     </div>
     )
