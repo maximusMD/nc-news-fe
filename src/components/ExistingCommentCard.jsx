@@ -2,13 +2,11 @@ export default function ExistingCommentCard({CommentsVotes, CommentsCreatedAt, C
     return (
         <div className="ExistingCommentCard">
         <h3 className="CommentName">Comment</h3>
-        <ul>
-            <li>{CommentsVotes}</li>
-            <li>{CommentsCreatedAt}</li>
-            <li>{CommentsAuthor}</li>
+            <p>{CommentsVotes}</p>
+            <p>{CommentsCreatedAt}</p>
+            <p>{CommentsAuthor}</p>
             <p>{CommentsBody}</p>
-            <li>{CommentsTopic}</li>
-        </ul>
+            <p>{CommentsTopic}</p>
         </div>
     )
 }

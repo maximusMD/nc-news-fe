@@ -6,7 +6,7 @@ export default function NavBar() {
             {/* <ul> */}
             <Link to="/articles"> Articles </Link>
             <Link to="/topics">Topics</Link>
-            <Link to="/users">Users</Link>
+            <Link to="/account">Account</Link>
             {/* </ul> */}
         </nav>
     )

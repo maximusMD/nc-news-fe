@@ -78,7 +78,7 @@ export default function ArticlesContainer() {
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
         </select>
-        <h2 className="ArticlesHeader">List of Articles</h2>
+        <h2 className="ArticlesHeader">Articles</h2>
         </div>
             {articles.map((article) => {
                 return (

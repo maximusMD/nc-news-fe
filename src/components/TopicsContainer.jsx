@@ -26,8 +26,7 @@ export default function TopicsContainer() {
 
     return (
         <div className="TopicsContainer">
-        <h1>List of Articles</h1>
-	    <ul id="Topics List">
+        <h1>Topics</h1>
 	        {topics.map((topic) => {
                 return (
                     <TopicsCard
@@ -37,7 +36,6 @@ export default function TopicsContainer() {
                     />
                 );
             })}
-        </ul>
         </div>
 	)
 }

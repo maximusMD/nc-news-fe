@@ -29,7 +29,7 @@ export default function CommentsContainer() {
 
     return (
         <div className="CommentsContainer">
-            <h1>Comments</h1>
+            <h2>Comments</h2>
             <PostCommentContainer article_id={article_id}/>
             <ExistingCommentContainer comments={comments}/>
         </div>

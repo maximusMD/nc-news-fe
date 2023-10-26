@@ -6,14 +6,12 @@ export default function ArticlesCard({ArticlesName, ArticlesAuthor, ArticlesTopi
         <Link to={`/articles/${article_id}`}>
         <h3 className="ArticlesName">{ArticlesName}</h3>
         </Link>
-        <ul>
-            <li>{ArticlesAuthor}</li>
-            <li>{ArticlesTopic}</li>
-            <li>{ArticlesCreatedAt}</li>
-            <li>Votes{ArticlesVotes}</li>
+            <h4>{ArticlesAuthor}</h4>
+            <p>{ArticlesTopic}</p>
+            <p>{ArticlesCreatedAt}</p>
+            <p>Votes: {ArticlesVotes}</p>
+            <p>Comments: {ArticlesCommentCount}</p>
             <img src={ArticlesImg}/> 
-            <li>CommentCount{ArticlesCommentCount}</li>
-        </ul>
     </div>
     )
 }

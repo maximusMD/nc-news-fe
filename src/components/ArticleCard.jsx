@@ -34,19 +34,17 @@ export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, A
     return (
         <div className="ArticleCard">
         <h3 className="ArticleName">{ArticleName}</h3>
-        <ul>
-            <li>{ArticleAuthor}</li>
-            <li>{ArticleTopic}</li>
-            <li>{ArticleCreatedAt}</li>
-            <li>
+            <p>{ArticleAuthor}</p>
+            <p>{ArticleTopic}</p>
+            <p>{ArticleCreatedAt}</p>
+            <p>
                 <button onClick={() => handleVote("up")} disabled={isLoading}>+1</button>
                 {votes}   
                 <button onClick={() => handleVote("down")} disabled={isLoading}>-1</button>
-            </li>
+            </p>
             <img src={ArticleImg}/> 
-            <li>{ArticleCommentCount}</li>
+            <p>{ArticleCommentCount}</p>
             <p>{ArticleBody}</p>
-        </ul>
     </div>
     )
 }

@@ -3,7 +3,6 @@ import ExistingCommentCard from "./ExistingCommentCard";
 export default function ExistingCommentContainer({comments}) {
     return (
         <div className="ExistingCommentContainer">
-        <ul id="Existing Comments">
 			{comments.map((comment) => {
 				return (
 					<ExistingCommentCard
@@ -16,7 +15,6 @@ export default function ExistingCommentContainer({comments}) {
 					/>
 				);
 			})}
-		</ul>
         </div>
     )
 }

@@ -15,7 +15,7 @@ function App() {
       <NavBar/>
       <Routes>
       < Route path="/articles" element={<ArticlesContainer />} />
-      < Route path="/users" element={<UsersContainer />} />
+      < Route path="/account" element={<UsersContainer />} />
       < Route path="/topics" element={<TopicsContainer />} />
       < Route path="/articles/:article_id" element={<ArticleContainer />} />
       </Routes>
