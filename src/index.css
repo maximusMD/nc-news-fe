@@ -111,6 +111,19 @@ ul {
   color: red;
 }
 
+.TopicsCard {
+  border-style: solid;
+  border-color: red;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.TopicsCard a{
+  color: red;
+}
+
 .ExistingCommentCard {
   color: white;
   border-style: solid;
