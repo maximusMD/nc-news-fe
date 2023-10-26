@@ -105,13 +105,17 @@ ul {
 
 .ArticleCard {
   color: white;
+}
+
+.ArticleName {
+  color: red;
+}
+
+.ExistingCommentCard {
+  color: white;
   border-style: solid;
   border-color: red;
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 10px;
-}
-
-.ArticleName {
-  color: red;
 }
