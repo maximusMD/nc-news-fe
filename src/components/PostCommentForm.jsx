@@ -24,7 +24,7 @@ export default function PostCommentForm({ onCommentSubmit, setComment }) {
     }
 
 return (
-    <form onSubmit={handleSubmit}>
+    <form className="PostCommentForm" onSubmit={handleSubmit}>
     <label>
         Username:
         <input

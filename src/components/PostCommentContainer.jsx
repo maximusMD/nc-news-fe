@@ -32,7 +32,7 @@ export default function PostCommentContainer({ article_id }) {
         }
     }  
     return (
-        <div>
+        <div className="PostCommentContainer">
         {isPosting ? <p>Posting your comment...</p> : null}
         {postSuccess ? <p>Comment posted successfully!</p> : null}
         {postError ? <p>Error posting comment: {postError}</p> : null}

@@ -25,7 +25,7 @@ export default function TopicsContainer() {
     }
 
     return (
-        <div>
+        <div className="TopicsContainer">
         <h1>List of Articles</h1>
 	    <ul id="Topics List">
 	        {topics.map((topic) => {

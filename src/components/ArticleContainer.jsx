@@ -29,7 +29,7 @@ export default function ArticleContainer({params}) {
     }
 
     return (
-        <div>
+        <div className="ArticleContainer">
         <ArticleCard
         article_id={article_id}
         ArticleAuthor={article["author"]}

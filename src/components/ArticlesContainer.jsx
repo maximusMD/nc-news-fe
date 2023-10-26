@@ -65,9 +65,8 @@ export default function ArticlesContainer() {
     }
 
     return (
-    <div>
-        <h1>List of Articles</h1>
-        <div>
+    <div className="ArticlesContainer">
+        <div className="SortOrder">
         <label>Sort by:</label>
         <select onChange={(e) => handleSorting(e.target.value)} value={sort}>
             <option value="created_at">Date</option>
@@ -79,8 +78,8 @@ export default function ArticlesContainer() {
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
         </select>
+        <h2 className="ArticlesHeader">List of Articles</h2>
         </div>
-            <ul id="Articles List">
             {articles.map((article) => {
                 return (
                     <ArticlesCard
@@ -96,7 +95,6 @@ export default function ArticlesContainer() {
                     />
                 )
             })}
-            </ul>
         </div>
     )
 }
