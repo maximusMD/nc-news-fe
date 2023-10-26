@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 random.jsx
+Feedback_to_Implement.md
+planning/Tickets.png
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
