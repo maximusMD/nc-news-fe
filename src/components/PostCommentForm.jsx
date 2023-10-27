@@ -3,16 +3,12 @@ import { useState } from "react";
 export default function PostCommentForm({ onCommentSubmit, setComment }) {
     const [username, setUsername] = useState("")
     const [body, setBody] = useState("")
-    const fixedVotes = 0
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         if (username && body) {
             const newComment = {
-            // comment_id: 500,
-            // created_at: new Date().toISOString(),
-            // votes: fixedVotes,
             username: username,
             body: body,
         };

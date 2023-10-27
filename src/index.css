@@ -30,15 +30,6 @@ img {
   border-radius: 3%;
 }
 
-.NavBar a {
-  color: white;
-  margin: auto;
-}
-
-.NavBar a:hover {
-  color: black;
-}
-
 ul {
   list-style: none;
 }
@@ -52,6 +43,36 @@ ul {
   font-size: 1.25rem;
   display: flex;
   align-items: space-between;
+}
+
+.NavBar a {
+  color: white;
+  margin: auto;
+}
+
+.NavBar a:hover {
+  color: black;
+}
+
+.HomeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.Summary {
+  padding: 10px;
+} 
+
+.HomeContainer img {
+  max-width: 25vw;
+}
+
+.HomeContainer a {
+  color: red;
+  display: inline-block;
+
 }
 
 .ArticlesContainer {

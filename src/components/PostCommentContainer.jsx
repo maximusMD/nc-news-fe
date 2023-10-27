@@ -9,6 +9,7 @@ export default function PostCommentContainer({ article_id }) {
     const [comment, setComment] = useState(null)
 
     const handleCommentSubmit = async (comment) => {
+        console.log(comment.body);
         setPosting(true)
         try {
             const res = await axios.post(

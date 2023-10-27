@@ -6,6 +6,7 @@ import UsersContainer from './components/UsersContainer'
 import ArticleContainer from './components/ArticleContainer';
 import TopicsContainer from './components/TopicsContainer';
 import NotFound from "./components/NotFound";
+import HomeContainer from "./components/HomeContainer";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Header/>
       <NavBar/>
       <Routes>
+      < Route path="/" element={<HomeContainer />} />
       < Route path="/articles" element={<ArticlesContainer />} />
       < Route path="/account" element={<UsersContainer />} />
       < Route path="/topics" element={<TopicsContainer />} />
