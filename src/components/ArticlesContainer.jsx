@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 export default function ArticlesContainer() {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [isError, setIsError] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
     const topicName = searchParams.get("topic") || ""
     const sort = searchParams.get("sort_by") || "created_at"
@@ -45,8 +46,10 @@ export default function ArticlesContainer() {
         setArticles(sortedArticles)
         setIsLoading(false)
     } 
-        catch (error) {
-            console.error(error)
+    catch (error) {
+        console.error(error)
+        setIsError(true)
+        setIsLoading(false)
     }
 }
     fetchArticles()
@@ -60,6 +63,10 @@ export default function ArticlesContainer() {
         setSearchParams({ topic: topicName, sort_by: sort, order: newOrder })
     }
 
+    if (isError) {
+        return <p>Not found</p>
+    }
+    
     if (isLoading) {
         return <p>Loading...</p>
     }

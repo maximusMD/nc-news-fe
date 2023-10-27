@@ -7,6 +7,7 @@ import CommentsContainer from "./CommentsContainer";
 export default function ArticleContainer({params}) {
     const [article, setArticle] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
+    const [isError, setIsError] = useState(false)
     const { article_id } = useParams()
 
     useEffect(() => {
@@ -19,10 +20,16 @@ export default function ArticleContainer({params}) {
             } 
             catch (error) {
                 console.error(error)
+                setIsError(true)
+                setIsLoading(false)
         }
         }
         fetchArticle();
     }, [article_id])
+
+    if (isError) {
+        return <p>Article not found</p>
+    }
 
     if (isLoading) {
         return <p>Loading...</p>
