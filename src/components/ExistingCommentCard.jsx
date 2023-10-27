@@ -1,6 +1,9 @@
 import axios from "axios";
 
 export default function ExistingCommentCard({CommentsVotes, CommentsCreatedAt, CommentsAuthor, CommentsBody, CommentsTopic, comment_id, user, updateComments}) {
+    const createdDate = new Date(CommentsCreatedAt)
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }
+    const formattedDate = createdDate.toLocaleDateString(undefined, options)
     const handleDeleteComment = async () => {
         console.log("CommentsAuthor:", CommentsAuthor);
         console.log("user:", user)
@@ -23,7 +26,7 @@ export default function ExistingCommentCard({CommentsVotes, CommentsCreatedAt, C
         <p>{CommentsBody}</p>
         <p>{CommentsAuthor}</p>
         <p>{CommentsVotes}</p>
-        <p>{CommentsCreatedAt}</p>
+        <p>{formattedDate}</p>
         <p>{CommentsTopic}</p>
         {CommentsAuthor === user && (
         <div>

@@ -4,6 +4,9 @@ import axios from "axios"
 export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, ArticleCreatedAt, ArticleVotes, ArticleImg, ArticleCommentCount, ArticleBody, article_id}) {
     const [votes, setVotes] = useState(ArticleVotes)
     const [isLoading, setIsLoading] = useState(false)
+    const createdDate = new Date(ArticleCreatedAt)
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }
+    const formattedDate = createdDate.toLocaleDateString(undefined, options)
 
     const handleVote = async (voteType) => {
         if (isLoading) {
@@ -36,7 +39,7 @@ export default function ArticleCard({ArticleName, ArticleAuthor, ArticleTopic, A
         <h3 className="ArticleName">{ArticleName}</h3>
             <p>{ArticleAuthor}</p>
             <p>{ArticleTopic}</p>
-            <p>{ArticleCreatedAt}</p>
+            <p>{formattedDate}</p>
             <p>
                 <button onClick={() => handleVote("up")} disabled={isLoading}>+1</button>
                 {votes}   

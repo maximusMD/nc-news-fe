@@ -5,6 +5,7 @@ import ArticlesContainer from './components/ArticlesContainer'
 import UsersContainer from './components/UsersContainer'
 import ArticleContainer from './components/ArticleContainer';
 import TopicsContainer from './components/TopicsContainer';
+import NotFound from "./components/NotFound";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       < Route path="/account" element={<UsersContainer />} />
       < Route path="/topics" element={<TopicsContainer />} />
       < Route path="/articles/:article_id" element={<ArticleContainer />} />
+      < Route path="*" element={<NotFound/>} />
       </Routes>
     </>
   )
